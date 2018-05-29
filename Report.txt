@@ -1,0 +1,45 @@
+1) On the analysis of the Pruning algorithm:
+
+    Pruning the decision trees created by the Information Gain and Variance
+    Impurity heuristics had interesting effects on the accuracy of the trees.
+    
+    An increased L meant the program would take longer, but would cover more 
+    kinds of trees with more kinds of pruned branches. However, an increased K
+    meant a higher amount of prunes on the tree usually. With a high K and a low
+    L, you were unlikely to be left with any pruned trees of any value, as they
+    would most likely have been pruned too much or too close to the root node.
+    The remaining tree would probably have an accuracy of little over 50%.
+    
+    However, with a reasonable large L and K, (around the amount of nodes in the
+    tree), it is possible to consistently form pruned trees with higher degrees
+    of accuracy that could be formed solely by the training set.
+    
+    While the first training and test set saw little to no improvement (and even
+    a decrease in accuracy!) with pruning because of its default 95% accuracy,
+    the second test and training set improved from a value of ~71% to 75% on
+    average, with vriation in between.
+    
+2) On the analysis of the Naive Bayes text classification algorithm:
+
+    The Naive Bayes algorithm's accuracy is directly affected by the size
+    of the training set it is given. Due to the large sample size given (over
+    1200 documents!), the algorithm is fairly accurate. (90% accuracy in
+    detecting spam!)
+    
+    However, the program takes a notably long time to run (The complexity of the
+    algorithm is D*L + C*V). While C*V is relatively small in this case (because
+    there is only one category), d*L is around ~186,000. This is compounded further
+    by the accuracy-boosting filter that removes stopwords. This filter increases
+    the number of performed operations to ~32,000,000! This *ONLY* includes the
+    createion of the Word Vector that holds all the necessary information, however.
+    
+    After its creation, the process of testing each of the test documents to the
+    training data only takes around ~374,000 operations. This is much, much lower
+    than the parsing of the training set.
+    
+    An improvement to the current filter would also alphabetize the words to include
+    in the array. This would make the process of testing a set faster, but would
+    also make the process of initially storing the words longer.
+    
+    However, despite the long time it takes to perform these operations, the
+    pay-off is worth it for a very accurate spam-detector!
