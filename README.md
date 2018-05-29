@@ -1,3 +1,1 @@
-"# ProjectEulerProblems" 
-# ProjectEulerProblems
 # Classifier
